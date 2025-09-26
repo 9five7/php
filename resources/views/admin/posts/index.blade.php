@@ -15,6 +15,7 @@
                 <th>Tiêu đề</th>
                 <th>Ảnh</th>
                 <th>Nội dung</th>
+                <th>member email</th>
                 <th>Ngày tạo</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                     <td>{{ $post->title }}</td>
                     <td><img src="{{ asset('storage/'.$post->image) }}" width="100"></td>
                     <td>{{ Str::limit($post->content, 80) }}</td>
+                    <td>{{ $post->member ? $post->member->email : 'N/A' }}</td>
                     <td>{{ $post->created_at->format('d/m/Y H:i') }}</td>
                 </tr>
             @empty

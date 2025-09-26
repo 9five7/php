@@ -24,6 +24,20 @@
             @error('image') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
 
+        {{-- 👇 Thêm chọn Member --}}
+        <div class="form-group">
+            <label>Member</label>
+            <select name="member_id" class="form-control">
+                <option value="">-- Chọn member --</option>
+                @foreach($members as $member)
+                    <option value="{{ $member->id }}" {{ old('member_id') == $member->id ? 'selected' : '' }}>
+                        {{ $member->email }} ({{ $member->name }})
+                    </option>
+                @endforeach
+            </select>
+            @error('member_id') <span class="text-danger">{{ $message }}</span> @enderror
+        </div>
+
         <button type="submit" class="btn btn-primary">Lưu</button>
     </form>
 @endsection

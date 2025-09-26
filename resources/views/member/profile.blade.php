@@ -14,7 +14,7 @@
             <h2 class="member-name">{{ $member->name }}</h2>
             <p class="member-email">{{ $member->email }}</p>
         </div>
-
+<a href="{{ route('member.posts.index') }}" class="btn btn-primary">Xem bài viết của tôi</a>
         <form action="{{ route('member.profile.update') }}" method="POST" enctype="multipart/form-data" class="profile-form">
             @csrf
             <div class="form-group">

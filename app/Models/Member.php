@@ -16,6 +16,10 @@ class Member extends Authenticatable
         'password',
         'avatar',
     ];
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     protected $hidden = [
         'password',

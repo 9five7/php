@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
-
+use App\Models\Member;
 class PostController extends Controller
 {
     /**
@@ -24,7 +24,8 @@ class PostController extends Controller
      */
     public function create()
     {
-         return view('admin.posts.create');
+        $members = Member::all();
+    return view('admin.posts.create', compact('members'));
     }
 
     /**
@@ -39,6 +40,7 @@ class PostController extends Controller
             'title'   => 'required|min:3|max:255',
             'content' => 'required|min:10',
             'image'   => 'required|image|mimes:jpg,jpeg,png,webp,webm|max:8048',
+            'member_id' => 'required|exists:members,id',
         ]);
 
         $path = $request->file('image')->store('posts', 'public');
@@ -47,6 +49,7 @@ class PostController extends Controller
             'title'   => $validated['title'],
             'content' => $validated['content'],
             'image'   => $path,
+            'member_id' => $validated['member_id'],
         ]);
 
         return redirect()->route('admin.posts.index')

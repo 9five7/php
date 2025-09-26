@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MemberAuthController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\MemberPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,5 +44,6 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::middleware('auth:member')->group(function () {
         Route::get('/profile', [MemberController::class, 'profile'])->name('profile');
         Route::post('/profile', [MemberController::class, 'updateProfile'])->name('profile.update');
+        Route::get('/posts', [MemberPostController::class, 'index'])->name('posts.index');
     });
 });
