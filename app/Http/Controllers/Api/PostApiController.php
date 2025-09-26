@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostApiController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::with('member:id,email,name')->latest()->get();
+        $member = $request->user(); 
+
+        $posts = Post::with('member:id,email,name')
+                    ->where('member_id', $member->id)
+                    ->latest()
+                    ->get();
 
         return response()->json([
             'status' => true,
