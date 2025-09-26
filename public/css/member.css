@@ -1,0 +1,103 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.profile-card {
+    background: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.avatar-wrapper {
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1f7c8a;
+}
+
+.member-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.member-email {
+    font-size: 14px;
+    color: #777;
+}
+
+.profile-form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: #1f7c8a;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #1f7c8a;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #166068;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
